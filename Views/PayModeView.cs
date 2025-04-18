@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
 namespace supermarket_mvp_lt.Views
 {
-    public partial class PayModeView : Form, IPayModeView 
+    public partial class PayModeView : Form, IPayModeView
     {
         private bool isEdit;
         private bool isSuccessful;
@@ -42,7 +43,7 @@ namespace supermarket_mvp_lt.Views
         public event EventHandler SaveEvent;
         public event EventHandler CancelEvent;
 
-        public void setPayModeListBindingSource(BindingSource payModeList)
+        public void SetPayModeListBildingSource(BindingSource payModeList)
         {
             DgPayMode.DataSource = payModeList;
         }
@@ -99,10 +100,44 @@ namespace supermarket_mvp_lt.Views
         {
 
         }
-        public void show()
+
+        public void setPayModeListBildingSource(BindingSource payModeList)
         {
-            this.Show();
-            //throw new NotImplementedException();
+            throw new NotImplementedException();
         }
+
+        public void setPayModeListBindingSource(BindingSource payModeList)
+        {
+            DgPayMode.DataSource = payModeList;
+        }
+        private static PayModeView instance;
+
+        public static PayModeView GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new PayModeView();
+                //instance.MdiParent = ParentControlDesigner;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
+        }
+
+        //internal class GetInstance : IPayModeView
+        //{
+        //    private MainView mainView;
+
+        //    public GetInstance(MainView mainView)
+        //    {
+        //        this.mainView = mainView;
+        //    }
+        //}
     }
 }
