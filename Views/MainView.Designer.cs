@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             panel1 = new Panel();
+            BtnExit = new Button();
             BtnPayMode = new Button();
             pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
@@ -38,14 +39,28 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(BtnExit);
             panel1.Controls.Add(BtnPayMode);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(219, 338);
+            panel1.Size = new Size(219, 386);
             panel1.TabIndex = 0;
+            // 
+            // BtnExit
+            // 
+            BtnExit.BackColor = SystemColors.AppWorkspace;
+            BtnExit.BackgroundImage = (Image)resources.GetObject("BtnExit.BackgroundImage");
+            BtnExit.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnExit.Dock = DockStyle.Bottom;
+            BtnExit.Location = new Point(0, 308);
+            BtnExit.Margin = new Padding(3, 2, 3, 2);
+            BtnExit.Name = "BtnExit";
+            BtnExit.Size = new Size(219, 78);
+            BtnExit.TabIndex = 2;
+            BtnExit.UseVisualStyleBackColor = false;
             // 
             // BtnPayMode
             // 
@@ -76,7 +91,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(997, 386);
             Controls.Add(panel1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "MainView";
@@ -92,5 +107,6 @@
         private Panel panel1;
         private Button BtnPayMode;
         private PictureBox pictureBox1;
+        private Button BtnExit;
     }
 }

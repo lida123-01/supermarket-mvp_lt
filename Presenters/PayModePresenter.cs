@@ -29,7 +29,7 @@ namespace supermarket_mvp_lt.Presenters
             this.view.SaveEvent += SavePayMode;
             this.view.CancelEvent += CancelPayMode;
 
-            this.view.setPayModeListBindingSource(payModeBindingSource);
+            this.view.setPayModeListBildingSource(payModeBindingSource);
 
             loadAllPayModeList();
 

@@ -20,7 +20,10 @@ namespace supermarket_mvp_lt.Views
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
+
             tabControl1.TabPages.Remove(tabPagePayModeDetail);
+
+            BtnClose.Click += delegate { this.Close(); };
         }
 
         private void AssociateAndRaiseViewEvents()
@@ -103,25 +106,29 @@ namespace supermarket_mvp_lt.Views
 
         public void setPayModeListBildingSource(BindingSource payModeList)
         {
-            throw new NotImplementedException();
-        }
-
-        public void setPayModeListBindingSource(BindingSource payModeList)
-        {
             DgPayMode.DataSource = payModeList;
         }
+
+        //public void setPayModeListBindingSource(BindingSource payModeList)
+        //{
+        //    DgPayMode.DataSource = payModeList;
+        //}
         private static PayModeView instance;
 
-        public static PayModeView GetInstance()
+        public static PayModeView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
                 instance = new PayModeView();
-                //instance.MdiParent = ParentControlDesigner;
+                instance.MdiParent = parentContainer;
+
+
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
             }
             else
             {
-                if (instance.WindowState == FormWindowState.Minimized)
+                if (instance.WindowState == FormWindowState.Maximized)
                 {
                     instance.WindowState = FormWindowState.Normal;
                 }
@@ -129,15 +136,5 @@ namespace supermarket_mvp_lt.Views
             }
             return instance;
         }
-
-        //internal class GetInstance : IPayModeView
-        //{
-        //    private MainView mainView;
-
-        //    public GetInstance(MainView mainView)
-        //    {
-        //        this.mainView = mainView;
-        //    }
-        //}
     }
 }
