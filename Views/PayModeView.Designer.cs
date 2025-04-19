@@ -168,7 +168,7 @@
             BtnNew.BackColor = Color.Gainsboro;
             BtnNew.BackgroundImage = (Image)resources.GetObject("BtnNew.BackgroundImage");
             BtnNew.BackgroundImageLayout = ImageLayout.Center;
-            BtnNew.Location = new Point(669, 68);
+            BtnNew.Location = new Point(673, 68);
             BtnNew.Margin = new Padding(3, 2, 3, 2);
             BtnNew.Name = "BtnNew";
             BtnNew.Size = new Size(224, 60);
@@ -303,8 +303,10 @@
             TxtPayModeId.Location = new Point(21, 38);
             TxtPayModeId.Margin = new Padding(3, 2, 3, 2);
             TxtPayModeId.Name = "TxtPayModeId";
+            TxtPayModeId.ReadOnly = true;
             TxtPayModeId.Size = new Size(110, 23);
             TxtPayModeId.TabIndex = 1;
+            TxtPayModeId.TextAlign = HorizontalAlignment.Right;
             // 
             // label3
             // 
